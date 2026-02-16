@@ -39,15 +39,6 @@ export const projectsData: Project[] = [
     link: 'https://github.com/...'
   },
   {
-    id: 'Pomodoro timer',
-    title: 'Pomodoro Timer',
-    description: 'Un temporizador de Pomodoro para ayudarte a concentrarte y ser más productivo.',
-    longDescription: 'Este proyecto es un temporizador de Pomodoro impreso en 3D, se basa en una técnica de gestión del tiempo que consiste en dividir el trabajo en bloques de 50 minutos de trabajo seguidos de 10 minutos de descanso. Este dispositivo permite la configuración independiente de los tiempos de trabajo y descanso y cuenta con indicadores visuales para mejorar la experiencia del usuario.',
-    images: ['pomodoro_main.webp'],
-    tech: ['Arduino', 'Fusion360', 'impresión 3D'],
-    link: 'https://github.com/...'
-  },
-  {
     id: 'Piaggio liberty 50cc 4T',
     title: 'Piaggio Liberty 50cc 4T',
     description: 'Un proyecto de reparación y venta de motocicleta Piaggio Liberty 50cc.',
