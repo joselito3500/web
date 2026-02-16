@@ -52,6 +52,7 @@ function App() {
             {/* Tus otras rutas */}
             <Route path="/sobre-mi" element={<About />} />
             <Route path="/proyectos" element={<Projects />} />
+            <Route path="/contacto" element={<Contact />} />
 
             {/* Redirección de seguridad: si entran a una ruta que no existe, al Inicio */}
             <Route path="*" element={<Navigate to="/" />} />
