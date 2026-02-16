@@ -1,5 +1,5 @@
-import React from 'react'
-import { BrowserRouter as Router, Routes,HashRouter,Navigate, Route } from 'react-router-dom'
+//import React from 'react'
+import { /*BrowserRouter as Router,*/ Routes,HashRouter,Navigate, Route } from 'react-router-dom'
 import Navbar from './components/navbar'
 import Projects from './components/Projects'
 import About from './components/About'
