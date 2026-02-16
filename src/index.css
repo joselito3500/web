@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@layer utilities {
+  @keyframes gradient-flow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; } /* Cambiamos a 100% para que el ciclo sea natural */
+  }
+
+  .animate-flow {
+    /* El background-size debe ser lo suficientemente grande para estirar los colores */
+    background-size: 400% 100%; 
+    animation: gradient-flow 8s linear infinite;
+    display: block; /* Asegura que se renderice correctamente */
+  }
+
+  .text-gradient-clip {
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+  }
+}
