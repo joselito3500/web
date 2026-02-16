@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
           {/* Logo y Eslogan */}
           <div className="text-center md:text-left">
             <h2 className="text-2xl font-black text-white">
-              JOSE<span className="text-blue-500">DEV</span>
+              JOSE<span className="animate-flow text-gradient-clip bg-gradient-to-r from-blue-600 via-emerald-400 via-purple-500 via-emerald-400 to-blue-600 pb-2 px-1">Projects</span>
             </h2>
             <p className="text-slate-500 mt-2 max-w-xs">
               Ingenieria e innovación.

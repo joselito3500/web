@@ -1,34 +1,11 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-
+import { Link } from 'react-router-dom';
+import { projectsData } from '../data/projectsData';
+import type { Project } from '../data/projectsData'; // Añadimos la palabra 'type'
 // Definimos una interfaz para los tipos de datos (buena práctica en TS)
-interface Project {
-  title: string;
-  description: string;
-  tags: string[];
-  link: string;
-}
 
-const myProjects: Project[] = [
-  {
-    title: "E-commerce Pro",
-    description: "Una tienda completa con carrito de compras y pasarela de pago.",
-    tags: ["React", "TypeScript", "Tailwind"],
-    link: "#"
-  },
-  {
-    title: "Dashboard de Clima",
-    description: "Visualización de datos meteorológicos usando APIs externas.",
-    tags: ["Vite", "API Rest", "Chart.js"],
-    link: "#"
-  },
-  {
-    title: "App de Notas",
-    description: "Gestión de tareas diarias con almacenamiento local.",
-    tags: ["React", "Local Storage"],
-    link: "#"
-  }
-];
+
 
 const Projects: React.FC = () => {
   return (
@@ -55,9 +32,15 @@ const Projects: React.FC = () => {
 
         {/* Grid de proyectos */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {myProjects.map((project, index) => (
+          {projectsData.map((project: Project) => (
+
+            <Link 
+              to={`/proyectos/${project.id}`} 
+              key={project.id} 
+              className="group block" // "block" para que ocupe todo el espacio
+            >
             <div 
-              key={index} 
+              key={project.id} 
               className="group bg-slate-900 border border-slate-800 p-8 rounded-3xl hover:border-blue-500/50 transition-all duration-300 hover:-translate-y-2"
             >
               <div className="flex justify-between items-start mb-6">
@@ -83,13 +66,14 @@ const Projects: React.FC = () => {
               </p>
 
               <div className="flex flex-wrap gap-2">
-                {project.tags.map(tag => (
+                {project.tech.map(tag => (
                   <span key={tag} className="text-xs font-medium px-3 py-1 bg-slate-800 text-slate-300 rounded-full">
                     {tag}
                   </span>
                 ))}
               </div>
             </div>
+            </Link>
           ))}
         </div>
       </div>

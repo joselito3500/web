@@ -1,7 +1,7 @@
 import React from 'react'
 
 const About: React.FC = () => {
-  const skills = ["Impresión 3D", "Electrónica", "bases de datos", "Homelabbing", "C++", "Python", "Linux", "Proxmox", "React", "TypeScript", "Docker", "Fusion360"];
+  const skills = ["Impresión 3D", "Electrónica", "Mecánica de motos", "bases de datos", "Homelabbing", "C++", "Python", "Linux", "Proxmox", "React", "TypeScript", "Docker", "Fusion360"];
 
   return (
     <section className="pt-32 pb-20 px-6 min-h-screen bg-slate-950 text-white">
@@ -14,7 +14,7 @@ const About: React.FC = () => {
           <div>
             <h2 className="text-4xl font-black mb-4">Hola, soy Jose 👋</h2>
             <p className="text-slate-400 text-lg leading-relaxed">
-              Soy un ingeniero en constante formación con una gran curiosidad por la tecnología. 
+              Soy ingeniero y mecánico de motos. Estoy en constante formación con una gran curiosidad por la tecnología. 
               Dedicado a aprender y experimentar con nuevas herramientas para crear proyectos innovadores 
               y desarrollar mis habilidades técnicas.
             </p>

@@ -5,6 +5,8 @@ import Projects from './components/Projects'
 import About from './components/About'
 import Contact from './components/Contact'
 import Footer from './components/Footer'; // Asegúrate de que la ruta sea correcta
+import ProjectDetail from './components/ProjectDetail'
+
 
 // Un componente rápido para la página de Inicio (Home)
 const Home = () => (
@@ -52,6 +54,7 @@ function App() {
             {/* Tus otras rutas */}
             <Route path="/sobre-mi" element={<About />} />
             <Route path="/proyectos" element={<Projects />} />
+            <Route path="/proyectos/:id" element={<ProjectDetail />} /> {/* Ruta dinámica */}
             <Route path="/contacto" element={<Contact />} />
 
             {/* Redirección de seguridad: si entran a una ruta que no existe, al Inicio */}

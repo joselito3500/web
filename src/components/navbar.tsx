@@ -16,7 +16,7 @@ const Navbar: React.FC = () => {
         
         {/* Logo */}
         <Link to="/" onClick={closeMenu} className="text-2xl font-black text-white tracking-tighter">
-          JOSE<span className="animate-flow text-gradient-clip bg-gradient-to-r from-blue-600 via-emerald-400 via-purple-500 via-emerald-400 to-blue-600 pb-2 px-1">DEV</span>
+          JOSE<span className="animate-flow text-gradient-clip bg-gradient-to-r from-blue-600 via-emerald-400 via-purple-500 via-emerald-400 to-blue-600 pb-2 px-1">Projects</span>
         </Link>
 
         {/* Desktop Menu (Se oculta en móviles: hidden md:flex) */}
