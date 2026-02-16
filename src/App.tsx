@@ -1,8 +1,8 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navbar from './components/navbar'
-import Projects from './components/projects'
-import About from './components/about'
+import Projects from './components/Projects'
+import About from './components/About'
 import Contact from './components/Contact'
 import Footer from './components/Footer'; // Asegúrate de que la ruta sea correcta
 
