@@ -1,5 +1,5 @@
 import React from 'react'
-import {Instagram, Mail } from 'lucide-react'
+import {Instagram/*, Mail */ } from 'lucide-react'
 
 const Footer: React.FC = () => {
   return (
@@ -27,9 +27,11 @@ const Footer: React.FC = () => {
             >
             <Instagram size={20} />
             </a>
+            {/*
             <a href="#" className="p-3 bg-slate-900 rounded-full text-slate-400 hover:text-blue-400 hover:scale-120 transition-all border border-slate-800">
               <Mail size={20} />
             </a>
+            */}
           </div>
         </div>
 
