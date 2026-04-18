@@ -24,7 +24,7 @@ const Navbar: React.FC = () => {
           <Link to="/" className="hover:text-blue-400 transition-colors">Inicio</Link>
           <Link to="/proyectos" className="hover:text-blue-400 transition-colors">Proyectos</Link>
           <Link to="/sobre-mi" className="hover:text-blue-400 transition-colors">Sobre mí</Link>
-          <Link to="/contacto" className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2.5 rounded-full transition-all active:scale-95">
+          <Link to="/contacto" className="bg-teal-300 hover:bg-teal-700 text-white px-6 py-2.5 rounded-full transition-all active:scale-95">
             Contacto
           </Link>
         </div>
