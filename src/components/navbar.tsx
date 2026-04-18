@@ -15,23 +15,23 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         
         {/* Logo */}
-        <Link to="/" onClick={closeMenu} className="text-2xl font-black text-white tracking-tighter">
-          JOSE<span className="animate-flow text-gradient-clip bg-gradient-to-r from-blue-600 via-emerald-400 via-purple-500 via-emerald-400 to-blue-600 pb-2 px-1">Projects</span>
+        <Link to="/" onClick={closeMenu} className="text-4xl font-black text-white tracking-tighter">
+          JOSE<span className="animate-flow text-gradient-clip bg-gradient-to-r from-teal-700 via-teal-300 via-purple-500 via-teal-300 to-teal-700 pb-2 px-1">Projects</span>
         </Link>
 
         {/* Desktop Menu (Se oculta en móviles: hidden md:flex) */}
-        <div className="hidden md:flex items-center gap-10 text-neutral-300 font-medium">
-          <Link to="/" className="hover:text-blue-400 transition-colors">Inicio</Link>
-          <Link to="/proyectos" className="hover:text-blue-400 transition-colors">Proyectos</Link>
-          <Link to="/sobre-mi" className="hover:text-blue-400 transition-colors">Sobre mí</Link>
-          <Link to="/contacto" className="bg-teal-300 hover:bg-teal-700 text-white px-6 py-2.5 rounded-full transition-all active:scale-95">
+        <div className="hidden md:flex items-center gap-5 text-gray-300 font-medium text-lg">
+          <Link to="/" className="bg-neutral-700 hover:bg-teal-800 px-6 py-2.5 rounded-full transition-all active:scale-95 hover:scale-105   hover:text-teal-300 transition-colors">Inicio</Link>
+          <Link to="/proyectos" className="bg-neutral-700 hover:bg-teal-800 px-6 py-2.5 rounded-full transition-all active:scale-95 hover:scale-105  hover:text-teal-300 transition-colors">Proyectos</Link>
+          <Link to="/sobre-mi" className="bg-neutral-700 hover:bg-teal-800 px-6 py-2.5 rounded-full transition-all active:scale-95 hover:scale-105   hover:text-teal-300 transition-colors">Sobre mí</Link>
+          <Link to="/contacto" className="bg-teal-300 hover:bg-teal-700 font-bold text-black px-6 py-2.5 rounded-full transition-all active:scale-95 hover:scale-105">
             Contacto
           </Link>
         </div>
 
         {/* Mobile Overlay Menu */}
         <div className={`
-          fixed inset-0 w-full h-screen bg-slate-950/98 backdrop-blur-xl z-40 md:hidden transition-all duration-500 ease-in-out
+          fixed inset-0 w-full h-screen bg-neutral-800/98 backdrop-blur-xl z-40 md:hidden transition-all duration-500 ease-in-out
           ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}
         `}>
           
@@ -40,21 +40,21 @@ const Navbar: React.FC = () => {
             <Link 
               to="/" 
               onClick={closeMenu} 
-              className="text-lg font-medium text-slate-300 hover:text-white tracking-widest transition-all hover:scale-110"
+              className="text-lg font-medium text-gray-300 hover:text-white tracking-widest transition-all hover:scale-110"
             >
               INICIO
             </Link>
             <Link 
               to="/proyectos" 
               onClick={closeMenu} 
-              className="text-lg font-medium text-slate-300 hover:text-white tracking-widest transition-all hover:scale-110"
+              className="text-lg font-medium text-gray-300 hover:text-white tracking-widest transition-all hover:scale-110"
             >
               PROYECTOS
             </Link>
             <Link 
               to="/sobre-mi" 
               onClick={closeMenu} 
-              className="text-lg font-medium text-slate-300 hover:text-white tracking-widest transition-all hover:scale-110"
+              className="text-lg font-medium text-gray-300 hover:text-white tracking-widest transition-all hover:scale-110"
             >
               SOBRE MÍ
             </Link>
@@ -74,14 +74,14 @@ const Navbar: React.FC = () => {
         {/* Mobile Button - Asegúrate de que tenga z-50 */}
         <button 
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-slate-300 hover:text-white transition-colors z-50 relative"
+          className="md:hidden text-gray-300 hover:text-white transition-colors z-50 relative"
         >
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
       {/* Línea de degradado con flujo infinito */}
-      <div className="h-[4px] w-full bg-gradient-to-r from-blue-600 via-emerald-400 via-purple-500 via-emerald-400 to-blue-600 animate-flow shadow-[0_0_15px_rgba(37,99,235,0.4)]"></div>
+      <div className="h-[4px] w-full bg-gradient-to-r from-teal-700 via-teal-300 via-purple-500 via-teal-300 to-teal-700 animate-flow shadow-[0_0_15px_rgba(37,99,235,0.4)]"></div>
     </nav>
   )
 }

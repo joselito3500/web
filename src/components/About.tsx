@@ -1,19 +1,26 @@
 import React from 'react'
 
 const About: React.FC = () => {
-  const skills = ["Impresión 3D", "Electrónica", "Mecánica de motos", "bases de datos", "Homelabbing", "C++", "Python", "Linux", "Proxmox", "React", "TypeScript", "Docker", "Fusion360"];
+  const skillCategories = {
+    "Intereses": ["Desarrollo de software", "Impresión 3D", "Automatización", "Robótica", "Homelabbing", "Selfhosting", "Ethical Hacking", "electrónica", "mecánica de motos"],
+    "Lenguajes y Frameworks": ["React", "TypeScript", "Python", "C++", "VHDL", "Arduino", "Ros2", "RAPID", "matlab"],
+    "Hardware": ["Mecánica de motos","PLCs", "Arduino", "Raspberry Pi", "ESP32", "Motores DC", "Servomotores", "Motores paso a paso", "Sensores", "electronica analógica y digital"],
+    "Sistemas": ["Linux", "Proxmox (hypervisor)", "OracleCloud", "wireguard (VPN)", "pihole (DNS)", "Nginx (reverse proxy)", "docker (containerization)","PostgreSQL (database)", "portainer (Docker management)", "nodered (flow-based programming)", "mosquitto (MQTT broker)" ],
+    "Diseño y CAD": ["Fusion360","freeCAD","OpenSCAD", "KiCAD", "autoCAD"],
+    
+  };
 
   return (
-    <section className="pt-32 pb-20 px-6 min-h-screen bg-slate-950 text-white">
+    <section className="pt-32 pb-20 px-6 min-h-screen bg-neutral-700 text-white">
       <div className="max-w-4xl mx-auto">
         {/* Cabecera con Foto/Avatar */}
         <div className="flex flex-col md:flex-row items-center gap-10 mb-16">
-          <div className="w-48 h-48 bg-gradient-to-tr from-blue-500 to-purple-500 rounded-3xl rotate-3 flex-shrink-0 shadow-2xl shadow-blue-500/20">
-            {/* Aquí podrías poner una <img src="..." /> más adelante */}
+          <div>
+            <img src="/web/LogoJP.png" alt="Jose's Avatar" className="w-full h-full object-cover" />
           </div>
           <div>
-            <h2 className="text-4xl font-black mb-4">Hola, soy Jose 👋</h2>
-            <p className="text-slate-400 text-lg leading-relaxed">
+            <h2 className="text-4xl font-black mb-4">Hola, soy Jose</h2>
+            <p className="text-gray-300 text-lg leading-relaxed">
               Soy ingeniero y mecánico de motos. Estoy en constante formación con una gran curiosidad por la tecnología. 
               Dedicado a aprender y experimentar con nuevas herramientas para crear proyectos innovadores 
               y desarrollar mis habilidades técnicas.
@@ -22,17 +29,24 @@ const About: React.FC = () => {
         </div>
 
         {/* Sección de Skills */}
-        <div className="bg-slate-900/50 border border-slate-800 p-8 rounded-3xl">
-          <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
-            <span className="text-blue-500">#</span> Mis Intereses y Habilidades
+        <div className="bg-neutral-800/50 border border-neutral-500 p-8 rounded-3xl">
+          <h3 className="text-2xl font-bold mb-6 flex items-center gap-2 text-gray-300">
+            <span className="text-teal-300">#</span> Mis Intereses y Habilidades
           </h3>
-          <div className="flex flex-wrap gap-3">
-            {skills.map((skill) => (
-              <div 
-                key={skill}
-                className="px-5 py-2 bg-slate-800 border border-slate-700 rounded-xl font-medium text-slate-300 hover:text-white hover:border-blue-500 transition-all cursor-default"
-              >
-                {skill}
+          <div className="flex flex-col gap-6">
+            {Object.entries(skillCategories).map(([category, skills]) => (
+              <div key={category}>
+                <h4 className="text-xl font-bold text-gray-300 mb-4">{category}</h4>
+                <div className="flex flex-wrap gap-3">
+                  {skills.map((skill) => (
+                    <div 
+                      key={skill}
+                      className="px-5 py-2 bg-neutral-800 border border-neutral-500 rounded-xl font-medium text-teal-300 hover:text-white hover:border-teal-700 transition-all cursor-default"
+                    >
+                      {skill}
+                    </div>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
@@ -40,13 +54,13 @@ const About: React.FC = () => {
 
         {/* Pequeña Bio Extra */}
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="p-6 bg-slate-900/30 rounded-2xl border border-slate-800">
-            <h4 className="font-bold text-blue-400 mb-2">Mi Objetivo</h4>
-            <p className="text-slate-400 text-sm">Construir herramientas digitales que faciliten la vida de las personas.</p>
+          <div className="p-6 bg-neutral-800/30 rounded-2xl border border-neutral-500">
+            <h4 className="font-bold text-gray-300 mb-2">Mi Objetivo</h4>
+            <p className="text-gray-300 text-sm">Construir herramientas digitales que faciliten la vida de las personas.</p>
           </div>
-          <div className="p-6 bg-slate-900/30 rounded-2xl border border-slate-800">
-            <h4 className="font-bold text-emerald-400 mb-2">Aprendizaje</h4>
-            <p className="text-slate-400 text-sm">Actualmente desarrollando mi propio proyecto.</p>
+          <div className="p-6 bg-neutral-800/30 rounded-2xl border border-neutral-500">
+            <h4 className="font-bold text-gray-300 mb-2">Aprendizaje</h4>
+            <p className="text-gray-300 text-sm">Actualmente desarrollando mi propio proyecto.</p>
           </div>
         </div>
       </div>
