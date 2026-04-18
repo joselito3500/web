@@ -42,7 +42,7 @@ function App() {
   return (
     <HashRouter>
       {/* Contenedor principal que ocupa toda la pantalla */}
-      <div className="flex flex-col min-h-screen bg-mist-950">
+      <div className="flex flex-col min-h-screen bg-mist-900">
         <Navbar />
         
         {/* El contenido crece y empuja al footer hacia abajo */}
