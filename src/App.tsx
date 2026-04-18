@@ -12,7 +12,7 @@ import ProjectDetail from './components/ProjectDetail'
 const Home = () => (
   <div className="pt-40 text-center">
     <h1 className="text-6xl font-black text-white">Bienvenido a mi Web</h1>
-    <p className="text-mist-400 mt-4">Navega por las secciones para conocerme mejor.</p>
+    <p className="text-slate-400 mt-4">Navega por las secciones para conocerme mejor.</p>
   </div>
 )
 /*
