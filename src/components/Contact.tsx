@@ -1,12 +1,48 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
 
 const Contact: React.FC = () => {
   const [enviado, setEnviado] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setEnviado(true);
-    // Aquí es donde normalmente enviarías los datos a un servicio como EmailJS o Formspree
+
+    const form = e.target as HTMLFormElement;
+
+    // Send auto-reply to the user
+    emailjs
+      .sendForm(
+        'service_rk2qsrs', // Replace with your EmailJS Service ID
+        'template_rcls9ma', // Replace with your auto-reply template ID
+        form,
+        'sRyb2sADLuCQr-uO3' // Replace with your EmailJS Public Key
+      )
+      .then(
+        () => {
+          console.log('Auto-reply sent successfully');
+        },
+        (error) => {
+          console.error('Auto-reply Error:', error);
+        }
+      );
+
+    // Send the message to yourself
+    emailjs
+      .sendForm(
+        'service_6myqyvt', // Replace with your EmailJS Service ID
+        'template_t0g28ji', // Replace with your message-to-you template ID
+        form,
+        'sRyb2sADLuCQr-uO3' // Replace with your EmailJS Public Key
+      )
+      .then(
+        () => {
+          setEnviado(true);
+        },
+        (error) => {
+          console.error('Message-to-you Error:', error);
+          alert('Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.');
+        }
+      );
   };
 
   return (
@@ -26,6 +62,7 @@ const Contact: React.FC = () => {
               <label className="block text-gray-300 mb-2 font-medium">Nombre</label>
               <input 
                 required
+                name="name"
                 type="text" 
                 className="w-full bg-neutral-800 border border-neutral-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-teal-300 transition-colors"
                 placeholder="Tu nombre..."
@@ -35,6 +72,7 @@ const Contact: React.FC = () => {
               <label className="block text-gray-300 mb-2 font-medium">Email</label>
               <input 
                 required
+                name="email"
                 type="email" 
                 className="w-full bg-neutral-800 border border-neutral-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-teal-300 transition-colors"
                 placeholder="tu@email.com"
@@ -44,6 +82,7 @@ const Contact: React.FC = () => {
               <label className="block text-gray-300 mb-2 font-medium">Mensaje</label>
               <textarea 
                 required
+                name="message"
                 rows={4}
                 className="w-full bg-neutral-800 border border-neutral-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-teal-300 transition-colors resize-none"
                 placeholder="¿En qué puedo ayudarte?"
@@ -51,7 +90,7 @@ const Contact: React.FC = () => {
             </div>
             <button 
               type="submit"
-              className="w-full py-4 bg-teal-300 hover:bg-teal-700 text-black font-bold rounded-xl shadow-lg shadow-teal-500/20 transition-all active:scale-95"
+              className="w-full py-4 bg-teal-500 hover:bg-teal-300 hover:scale-102 text-black font-bold rounded-xl shadow-lg shadow-teal-500/20 transition-all active:scale-97"
             >
               Enviar mensaje
             </button>
@@ -59,7 +98,7 @@ const Contact: React.FC = () => {
         )}
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;
