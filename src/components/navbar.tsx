@@ -11,7 +11,7 @@ const Navbar: React.FC = () => {
   
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-mist-800/90 backdrop-blur-md border-b border-mist-700 z-50">
+    <nav className="fixed top-0 left-0 w-full bg-neutral-800/90 backdrop-blur-md border-b border-neutral-700 z-50">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         
         {/* Logo */}
@@ -20,7 +20,7 @@ const Navbar: React.FC = () => {
         </Link>
 
         {/* Desktop Menu (Se oculta en móviles: hidden md:flex) */}
-        <div className="hidden md:flex items-center gap-10 text-slate-300 font-medium">
+        <div className="hidden md:flex items-center gap-10 text-neutral-300 font-medium">
           <Link to="/" className="hover:text-blue-400 transition-colors">Inicio</Link>
           <Link to="/proyectos" className="hover:text-blue-400 transition-colors">Proyectos</Link>
           <Link to="/sobre-mi" className="hover:text-blue-400 transition-colors">Sobre mí</Link>
